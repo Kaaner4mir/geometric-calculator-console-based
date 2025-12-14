@@ -14,12 +14,22 @@ public enum Message
     [Description("The perimeter of the parallelogram")]
     parallelogram,
 
-    [Description("The perimeter of the parallelogram")]
+    [Description("The perimeter of the regular polygon")]
     regularPolygon,
 }
 
+/// <summary>
+/// Provides methods for calculating the perimeter of various geometric shapes.
+/// </summary>
 class Perimeter
 {
+    /// <summary>
+    /// Displays the perimeter calculation menu and processes user selection to perform the appropriate perimeter calculation.
+    /// </summary>
+    /// <remarks>
+    /// Clears the console, displays the perimeter menu, and routes the user's selection to the
+    /// corresponding perimeter calculation method. Handles exceptions and displays error messages.
+    /// </remarks>
     public static void PerimeterOperations()
     {
         try
@@ -45,15 +55,29 @@ class Perimeter
         }
     }
 
+    /// <summary>
+    /// Calculates and displays the perimeter of a square.
+    /// </summary>
+    /// <remarks>
+    /// Prompts the user for the side length, then calculates the perimeter using
+    /// the formula: Perimeter = 4 × side
+    /// </remarks>
     public static void Square()
     {
-        double lenght = Utils.GetInput<double>("\n ➡️ Enter the side lenght: ");
+        double length = Utils.GetInput<double>("\n ➡️ Enter the side length: ");
 
-        double result = 4 * lenght;
+        double result = 4 * length;
 
         ShowResult(Message.square, result);
     }
 
+    /// <summary>
+    /// Calculates and displays the perimeter of a rectangle.
+    /// </summary>
+    /// <remarks>
+    /// Prompts the user for the short side and long side lengths, then calculates the perimeter using
+    /// the formula: Perimeter = 2 × (short side + long side)
+    /// </remarks>
     public static void Rectangle()
     {
         double shortSide = Utils.GetInput<double>("\n ➡️ Enter the short side: ");
@@ -64,6 +88,13 @@ class Perimeter
         ShowResult(Message.rectangle, result);
     }
 
+    /// <summary>
+    /// Calculates and displays the perimeter (circumference) of a circle.
+    /// </summary>
+    /// <remarks>
+    /// Prompts the user for the radius, then calculates the perimeter using
+    /// the formula: Perimeter = 2 × π × radius
+    /// </remarks>
     public static void Circle()
     {
         double radius = Utils.GetInput<double>("\n ➡️ Enter the radius: ");
@@ -73,6 +104,13 @@ class Perimeter
         ShowResult(Message.circle, result);
     }
 
+    /// <summary>
+    /// Calculates and displays the perimeter of a parallelogram.
+    /// </summary>
+    /// <remarks>
+    /// Prompts the user for the short side and long side lengths, then calculates the perimeter using
+    /// the formula: Perimeter = 2 × (short side + long side)
+    /// </remarks>
     public static void Parallelogram()
     {
         double shortSide = Utils.GetInput<double>("\n ➡️ Enter the short side: ");
@@ -83,16 +121,32 @@ class Perimeter
         ShowResult(Message.parallelogram, result);
     }
 
+    /// <summary>
+    /// Calculates and displays the perimeter of a regular polygon.
+    /// </summary>
+    /// <remarks>
+    /// Prompts the user for the number of sides and side length, then calculates the perimeter using
+    /// the formula: Perimeter = number of sides × side length
+    /// </remarks>
     public static void RegularPolygon()
     {
         double numberOfSides = Utils.GetInput<double>("\n ➡️ Enter the number of sides: ");
-        double sideLenght = Utils.GetInput<double>(" ➡️ Enter the side lenght: ");
+        double sideLength = Utils.GetInput<double>(" ➡️ Enter the side length: ");
 
-        double result = numberOfSides * sideLenght;
+        double result = numberOfSides * sideLength;
 
         ShowResult(Message.regularPolygon, result);
     }
 
+    /// <summary>
+    /// Displays the calculated perimeter result with a formatted message.
+    /// </summary>
+    /// <param name="message">The message enum value that contains the shape description.</param>
+    /// <param name="result">The calculated perimeter value to display.</param>
+    /// <remarks>
+    /// Formats and displays the result using the description from the Message enum
+    /// attribute and the calculated result value in green color.
+    /// </remarks>
     public static void ShowResult(Message message, double result)
     {
         Utils.WriteColored($"\n ✅ {message.GetDescription()} is {result}", ConsoleColor.Green);
