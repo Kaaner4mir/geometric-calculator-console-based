@@ -8,7 +8,7 @@
 
 **A colorful and user-friendly console-based geometric calculator for calculating perimeter, area, and volume of various shapes**
 
-[Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Project Structure](#-project-structure) • [License](#-license)
+[Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Screenshots](#-screenshots) • [Project Structure](#-project-structure) • [License](#-license)
 
 </div>
 
@@ -128,6 +128,25 @@ When the application starts, the main menu screen is displayed. You can select t
 
 ✅ The volume of the cube is 64
 ```
+
+---
+
+## 📸 Screenshots
+
+### Main Menu
+![Main Menu](Images/main-menu.png)
+
+### Perimeter Calculation
+![Perimeter Operation](Images/perimeter-operation.png)
+
+### Area Calculation
+![Area Operation](Images/area-operation.png)
+
+### Volume Calculation
+![Volume Operation](Images/volume-operation.png)
+
+### Error Handling
+![Invalid Transaction](Images/invalid-transaction.png)
 
 ---
 
